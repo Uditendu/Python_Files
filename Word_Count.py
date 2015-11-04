@@ -1,5 +1,5 @@
 def word_count(txt):
-    Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-'
+    Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-123456789'
     txt+=' '
     i=0
     j=0

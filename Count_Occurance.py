@@ -1,7 +1,7 @@
 """Module to count how many times check appears in a String
 """
 def count_occurance(txt, check):
-    Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-'
+    Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-123456789'
     txt+=' '
     l = len(check)
     n=0
