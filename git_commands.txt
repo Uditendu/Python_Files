@@ -1,0 +1,45 @@
+git init                                                                                                  
+Initialized empty Git repository in /home/jupyter/project_day3/.git/                                                                           
+jupyter@cefbf715f25b:~/project_day3$ git add Word_Count.py                                                                                     
+jupyter@cefbf715f25b:~/project_day3$ git add Count_Occurance.py                                                                                
+jupyter@cefbf715f25b:~/project_day3$ git commit                                                                                                
+[master (root-commit) 39c6860] Initial Commit. Two python modules                                                                              
+ 2 files changed, 47 insertions(+)                                                                                                             
+ create mode 100644 Count_Occurance.py                                                                                                         
+ create mode 100644 Word_Count.py                                                                                                              
+jupyter@cefbf715f25b:~/project_day3$ git remote add Python_Files https://github.com/Uditendu/Python_Files.git                                  
+jupyter@cefbf715f25b:~/project_day3$ git push Python_Files master                                                                              
+Username for 'https://github.com': Uditendu                                                                                                    
+Password for 'https://Uditendu@github.com':                                                                                                    
+Counting objects: 4, done.                                                                                                                     
+Delta compression using up to 32 threads.                                                                                                      
+Compressing objects: 100% (4/4), done.                                                                                                         
+Writing objects: 100% (4/4), 813 bytes | 0 bytes/s, done.                                                                                      
+Total 4 (delta 0), reused 0 (delta 0)                                                                                                          
+To https://github.com/Uditendu/Python_Files.git                                                                                                
+ * [new branch]      master -> master                                                                                                          
+jupyter@cefbf715f25b:~/project_day3$ git add Word_Count.py                                                                                     
+jupyter@cefbf715f25b:~/project_day3$ git add Count_Occurance.py                                                                                
+jupyter@cefbf715f25b:~/project_day3$ git commit                                                                                                
+On branch master                                                                                                                               
+nothing to commit, working directory clean                                                                                                     
+jupyter@cefbf715f25b:~/project_day3$ git push Python_Files master                                                                              
+Username for 'https://github.com': Uditendu                                                                                                    
+Password for 'https://Uditendu@github.com':                                                                                                    
+Everything up-to-date                                                                                                                          
+jupyter@cefbf715f25b:~/project_day3$ git add Count_Occurance.py                                                                                
+jupyter@cefbf715f25b:~/project_day3$ git add Word_Count.py                                                                                     
+jupyter@cefbf715f25b:~/project_day3$ git commit                                                                                                
+[master 50cb5f0] Modified both Programmes.                                                                                                     
+ 2 files changed, 2 insertions(+), 2 deletions(-)                                                                                              
+jupyter@cefbf715f25b:~/project_day3$ git push Python_Files master     
+
+Username for 'https://github.com': Uditendu                                                                                                    
+Password for 'https://Uditendu@github.com':                                                                                                    
+Counting objects: 7, done.                                                                                                                     
+Delta compression using up to 32 threads.                                                                                                      
+Compressing objects: 100% (4/4), done.                                                                                                         
+Writing objects: 100% (4/4), 398 bytes | 0 bytes/s, done.                                                                                      
+Total 4 (delta 2), reused 0 (delta 0)                                                                                                          
+To https://github.com/Uditendu/Python_Files.git                                                                                                
+   39c6860..50cb5f0  master -> master   
