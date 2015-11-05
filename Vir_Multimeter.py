@@ -5,6 +5,22 @@ class Multimeter(object):
         self.host = host
         self.port = port
         self.bufsize = bufsize
+        
+    def Cheak_Current_Val(self,A):
+        k = 0
+        while k<10: 
+            try:
+                mydata = float(input(A))
+                if mydata>1.0:
+                    print ('You are going to burn your instrument')
+                    k+=1
+                else:
+                    value = mydata
+                    break
+            except ValueError:
+                print ('Current is a number, Moron')
+                k+=1
+        return value
 
     def Read_Voltage(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -53,22 +69,11 @@ class Multimeter(object):
         return r
     
     def Set_Current(self):
-        k = 0
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((self.host, self.port))
         r=''
-        while k<10: 
-            try:
-                mydata = float(input('Please enter desired Current (in Amp):'))
-                if mydata>1.0:
-                    print ('You are going to burn your instrument')
-                    k+=1
-                else:
-                    message=bytes('SET:CUR'+str(mydata) ,'utf-8')
-                    break
-            except ValueError:
-                print ('Current is a number, Moron')
-                k+=1
+        value = self.Cheak_Current_Val('Please enter the desired value (in Amp):')
+        message=bytes('SET:CUR'+str(value) ,'utf-8')
         self.sock.send(message)
         r = self.sock.recv(self.bufsize)
         self.sock.shutdown(2)
@@ -82,3 +87,10 @@ class Multimeter(object):
         volt = float(v[11:-2])
         r = (volt/curr)
         return 'Measured Resistance:'+str(r)+'Ohm'
+    
+    def Meas_R_Multi_Point(self):
+        ini = self.Cheak_Current_Val('Please enter the initial current value (in Amp):')
+        fin = self.Cheak_Current_Val('Please enter the final current value (in Amp):')
+        diff = self.Cheak_Current_Val('Please enter the current step (in Amp):')
+        
+        
