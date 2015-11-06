@@ -1,0 +1,4 @@
+"""usuful sipython commands
+"""
+
+%matplotlib inline              #to plot in ipython notebook
