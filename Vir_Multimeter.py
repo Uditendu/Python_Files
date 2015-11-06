@@ -1,5 +1,7 @@
 import socket
 import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
 
 class Multimeter(object):
     def __init__(self, host, port, bufsize):
@@ -15,7 +17,7 @@ class Multimeter(object):
                 if mydata>1.0:
                     print ('You are going to burn your instrument: Please enter a value between 0 to 1')
                     k+=1 
-                elif mydata<0.0:
+                elif mydata<0.0 or mydata==0:
                     print ('Please give a positive current between 0 to 1')
                 else:
                     value = mydata
@@ -106,13 +108,14 @@ class Multimeter(object):
         while (fin)>current:
             i = str(self.Set_Current_Value(current))
             v = str(self.Read_Voltage())
-            print(i)
-            print(v)
             r = float(v[11:-2])/float(i[11:-2])
             X.append(float(i[11:-2]))
             Y.append(float(v[11:-2]))
             Z.append(r)
             current+=diff
-            
         
+        plt.plot(X,Y,'.')
+        plt.axis([(ini-diff), (fin+diff), (Y[0]-0.1), (Y[-1]+0.1)])
+        plt.show()
         return Z
+        
