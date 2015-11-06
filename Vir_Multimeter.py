@@ -1,7 +1,7 @@
 import socket
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 
 class Multimeter(object):
     def __init__(self, host, port, bufsize):
